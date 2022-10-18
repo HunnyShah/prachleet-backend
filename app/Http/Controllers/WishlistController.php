@@ -46,13 +46,13 @@ class WishlistController extends Controller
         return redirect( '/watchs/list' )
         ->with( 'message', 'Movie added to Wishlist!' );
         }
-        return redirect( '/watchs/list' )
-        ->with( 'message', 'Movie already exists in wishlist!' );
+        // return redirect( '/watchs/list' )
+        // ->with( 'message', 'Movie already exists in wishlist!' );
     }
 
     public function delete( Wishlist $wishlist ) {
 
-        $wishlist = Wishlist::find($id);
+        // $wishlist = Wishlist::find($id);
         $wishlist->delete();
 
         return redirect( '/wishlist/list' )
