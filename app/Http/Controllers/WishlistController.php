@@ -52,7 +52,7 @@ class WishlistController extends Controller
 
     public function delete( Wishlist $wishlist ) {
 
-        // $wishlist = Wishlist::find($id);
+        $wishlist = Wishlist::find($id);
         $wishlist->delete();
 
         return redirect( '/wishlist/list' )
