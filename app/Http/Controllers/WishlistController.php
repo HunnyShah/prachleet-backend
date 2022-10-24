@@ -31,9 +31,9 @@ class WishlistController extends Controller
         
         $exists = Wishlist::where(['user_id'=> auth()->user()->id,
         'watch_id'=> $attributes[ 'watchid' ]])
-        ->get();
+        ->first();
 
-        if(is_null($exists)) {
+        if($exists===null) {
 
         $wish = new Wishlist();
         $wish->user_id = $attributes[ 'userid' ];
